@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage('Git Checkout ') {
             steps {
-                git 'https://github.com/jaiswaladi246/DotNet-DEMO.git'
+                git 'https://github.com/Sunilmargale/DotNet-DEMO-Webapp-CICD.git'
             }
         }
         
@@ -65,10 +65,8 @@ pipeline {
         
         stage('Docker Deploy') {
             steps {
-                sh "docker run -d -p 5000:5000 adijaiswal/dotnet-demoapp"
+                sh "docker run -dp 5000:5000 sunilmargale/dotnet-demoapp"
             }
-        }
-        
-        
+        }  
     }
 }
